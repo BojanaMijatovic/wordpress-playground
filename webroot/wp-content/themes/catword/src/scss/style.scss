@@ -1,0 +1,1679 @@
+/*!
+  Theme Name : Catword
+  Author: Bojana
+
+
+*/
+
+
+/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/*Global styles*/
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 37.2%;
+    font-weight: 400;
+    color: #939191;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4.8em;
+}
+
+h2, h3, h4 {
+    text-align: center;
+}
+
+h2 {
+    position: relative;
+    font-size: 4.8em;
+    font-weight: 700;
+    color: #55557d;
+}
+
+h3 {
+    font-size: 3.6em;
+    font-weight: 500;
+    color: #2b2b2b;
+    position: relative;
+}
+
+h4 {
+    font-size: 2em;
+    font-weight: 500;
+    color: #2b2b2b;
+}
+
+p {
+    font-size: 2.4em;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    padding-bottom: 50px;
+}
+
+.container {
+    max-width: 1300px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+.brake {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+}
+.brake:after {
+    content: "480px";
+    color: white;
+    display: block;
+    background-color: red;
+    padding: 5px 10px;
+}
+
+.unstyle-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    position: relative;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #ff3b5d;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.btn2 {
+    margin: 20px auto;
+    display: block;
+    font-size: 1.8em;
+    font-weight: 400;
+    padding: 20px;
+    background-color: #55557d;
+}
+
+.btn:hover {
+    transition: all .5s;
+    background-color: #fff;
+    color: #3b3b3b;
+    border: 5px solid #ff3b5d;
+    padding: 15px 45px;
+}
+
+.btn2:hover {
+    padding: 15px;
+    border: 5px solid #55557d;
+}
+
+/* ====== HEADER ====== */
+header {
+  box-sizing: initial;
+    width: 100%;
+    position: fixed;
+    background: #fff;
+    padding: 13px 8px 20px 8px;
+    box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22);
+    z-index: 20;
+}
+
+header .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navigation {
+   /* display: none;*/
+    position: fixed;
+    top: 0;
+    left: 25%;
+    width: 75%;
+    height: 100%;
+    background: #2b2b2b;
+    text-align: center;
+    color: #fff;
+    opacity: 0.9;
+    transition: all .5s ease-in;
+    transform: translate3d(150%, 0, 0);
+}
+
+.navigation  ul {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.navigation  a {
+    color: #fff;
+    font-size: 4em;
+    line-height: 60px;
+    padding: 5px 5px;
+}
+
+.close {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    margin: 0;
+}
+
+.close span {
+    width: 40px;
+    height: 4px;
+    background: #55557d;
+    display: block;
+    transform: rotate(45deg);
+}
+
+.close span:nth-child(2) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -4px;
+}
+
+.header-logo {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.header-logo img {
+    width: 90px;
+    height: 20px;
+}
+
+.burger {
+    width: 44px;
+    height: 25px;
+    padding: 5px 0;
+    float: right;
+    margin-top: 5px;
+    transition: all 0.5s ease-in;
+}
+
+.burger span {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    display: block;
+    margin-top: 9px;
+}
+
+.burger span:nth-child(1) {
+    margin-top: 0;
+    width: 60%;
+    float: right;
+}
+
+.burger span:nth-child(2) {
+    width: 80%;
+    float: right;
+    clear: both;
+}
+
+.burger span:nth-child(3) {
+    float: right;
+    clear: both;
+}
+
+/* ====== END OF HEADER ======*/
+
+/* ====== HERO SECTION ======*/
+.hero {
+    padding-top: 60px;
+    padding-bottom: 0;
+    background-image: url("./assets/hero.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero .container {
+    background-color: rgba(255, 217, 146, .5);
+
+}
+
+.hero-left {
+    max-width: 500px;
+    padding-top: 150px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+}
+
+.hero-left h1 {
+    color: #000;
+    font-weight: 400;
+}
+
+.hero-left strong {
+    color: #2b2b2b;
+    font-weight: 700;
+}
+/*====== END OF HERO SECTION =====*/
+
+/* ====== NASE USLUGE ===== */
+.services {
+    padding-top: 30px;
+    background-color: #fafafa;
+}
+.services h2 {
+    margin-top: 0;
+}
+.services h2::after,
+.text-right h2::after,
+.price h2:after,
+.contact h2:after {
+    content: '';
+    display: block;
+    width: 110px;
+    position: absolute;
+    border-top: 1px solid #939191;
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -55px;
+}
+/* ===== END OF NASE USLUGE ==== */
+
+/* ===== JEZICI ====== */
+.language {
+    height: 100%;
+    padding-bottom: 50px ;
+}
+
+.language p {
+    font-size: 2em;
+}
+
+.icons {
+    max-height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.one-lang {
+    height: auto;
+    max-width: 120px;
+    display: inline-block;
+    text-align: center;
+}
+
+.big-ben, .moscow, .eiffel, .cathedral, .museum {
+    display: inline;
+}
+
+.icons img {
+    margin: 20px 20px 15px 20px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.icons p {
+    display: inline-block;
+    margin-top: 0;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ====== END OF JEZICI ===== */
+
+/* ====== USMENO PREVODJENJE ===== */
+.verbal-translation {
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 84.25%;
+    overflow: hidden;
+}
+
+.image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.verbal-text {
+    text-align: left;
+}
+
+.verbal-text h3::after {
+    content: '';
+    display: block;
+    width: 190px;
+    position: absolute;
+    border-top: 1px solid #939191;
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -95px;
+}
+
+.verbal-text p {
+    font-size: 2.2em;
+}
+/* ====== END OF USMENO PREVODJENJE ====== */
+
+/* ====== PREVODILACKE USLUGE ======= */
+.service {
+    margin: 40px 0px 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    justify-content: center;
+    grid-gap: 20px;
+}
+
+.list-of-services h3::after {
+    content: '';
+    display: block;
+    width: 190px;
+    position: absolute;
+    border-top: 1px solid #939191;
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -95px;
+}
+
+.service-card {
+    margin: 0;
+    background-color: #fff;
+    padding: 20px 10px;
+    border-radius: 5px;
+    justify-items: center;
+    box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22);
+}
+
+.service-card h4 {
+    font-size: 3em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.service-card p {
+    font-size: 2.1em;
+    padding: 0 10px;
+}
+
+.service-card svg {
+    display: inline;
+    height: 60px;
+    width: 50px;
+    padding-left: 10px;
+}
+
+.written svg {
+    width: 120px;
+    height: 50px;
+}
+
+.written h4 {
+    padding-top: 10px;
+}
+
+.written svg {
+    fill: #e217db;
+}
+
+.lecture svg {
+    fill: #24e615;
+}
+
+.diploma svg {
+    fill: #e6e415;
+}
+
+.chat svg {
+    fill: #e63c15;
+}
+
+.redakt svg {
+    fill: #5515e6;
+}
+
+.service-card:hover {
+    opacity: 0.9;
+    transition: 0.5s ease-in;
+}
+
+.service-card:hover svg {
+    fill: #fff;
+}
+
+.written:hover {
+    background-color: #db8ad8;
+}
+
+.lecture:hover {
+    background-color: #8fdc89;
+}
+
+.diploma:hover {
+    opacity: 0.7;
+    background-color: #dec44a;
+}
+
+.chat:hover {
+    background-color: #dc9889;
+}
+
+.redakt:hover {
+    background-color: #a289dc;
+}
+
+.service-card:hover h4 {
+    color: #fff;
+}
+
+.service-card:hover p {
+    color: #fff;
+}
+
+/* ====== END OF PREVODILACKE USLUGE =====*/
+
+/* ====== OBLASTI PREVODJENJA ======*/
+
+.translation-areas {
+    padding-bottom: 60px;
+}
+
+.translation-areas h2::after {
+    content: '';
+    display: block;
+    width: 256px;
+    position: absolute;
+    border-top: 1px solid #939191;
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -128px;
+}
+
+.image_2 {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 84.25%;
+    overflow: hidden;
+}
+
+.image_2 img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    height: 200px;
+}
+.text-area p {
+    font-size: 2em;
+}
+
+.two {
+    display: none;
+}
+/* ===== END OBLASTI PREVODJENJA ======*/
+
+/* ====== STATISTICS ====== */
+.stats {
+    position: relative;
+    padding-top: 30px;
+    margin: 0;
+    height: auto;
+    background-image: url('./assets/stats.png');
+    background-position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -12;
+}
+
+.crown {
+     display: grid;
+     grid-template-columns: 150px 150px;
+     grid-template-rows: auto;
+     justify-content: center;
+     justify-items: center;
+     grid-gap: 20px;
+    }
+.stats:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(47,47,69, 0.8);
+    z-index: -2;
+}
+
+.star {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    z-index: 33;
+}
+/* ======= END OF STATISTIC ====== */
+
+/* ====== CENOVNIK ====== */
+.price {
+    padding-top: 20px;
+    background-color: rgba(41, 10, 89, 0.3);
+}
+
+.price p {
+    display: inline-block;
+    font-size: 16px;
+}
+.price-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    justify-content: center;
+    justify-items:center;
+}
+.price-card {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 40px 10px;
+    border-radius: 5px;
+    box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22);
+}
+
+.price-list .price-card li {
+    position: relative;
+    margin-bottom: 25px;
+    padding: 0 20px;
+}
+.price-list .price-card p {
+    color: #2b2b2b;
+    font-weight: 500;
+    margin: 0;
+    display: inline;
+    padding-right: 90px;
+}
+.price-list .price-card span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    padding-right: 15px;
+}
+
+.written-price {
+    position: relative;
+    max-height: 400px;
+}
+.verbal-price ul{
+    padding: 50px 10px 0px 10px;
+}
+
+.price-card:hover {
+    transition: all .5s ease-in;
+    background-color: #55557d;
+    color: #fff;
+}
+
+.price-card:hover h3, .price-card:hover p {
+    color: #fff;
+}
+/* ====== END OF CENOVNIK ======*/
+
+/* ====== O NAMA ======*/
+.about {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    justify-content: center;
+    justify-items: center;
+}
+.no-img {
+    display: none;
+}
+.animation {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+
+}
+
+.animation svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -28%);
+}
+
+
+.text-right {
+    position: relative;
+    max-width: 560px;
+    transition: all 0.5s ease-in;
+}
+
+.hidden-text {
+    display: none;
+}
+
+.dots {
+    display: inline;
+}
+
+.text-right button {
+    background-color: #ff3b5d;
+    padding: 20px 35px;
+}
+
+.text-right button:hover {
+    padding: 15px 30px;
+    border-color: #ff3b5d;
+}
+
+/* ====== END OF O NAMA ====== */
+
+
+/* ====== KONTAKT ====== */
+.contact {
+    padding-bottom: 20px;
+}
+.contact h2 {
+    font-size: 4em;
+    color: #2b2b2b;
+}
+
+.contact li p {
+    text-align: center;
+    font-size: 12px;
+}
+
+.contact-list {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.contact-list li {
+    position: relative;
+    width: 250px;
+    margin-top: 10px;
+    height: 60px;
+}
+
+.contact-list li p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    margin-top: 0;
+}
+
+.contact-list li::before {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+}
+
+.contact-list .contact_2 p {
+    transform: translate(-25%, -70%);
+}
+
+.contact_1::before {
+    content: url(./assets/icon1.png);
+}
+.contact_2::before {
+    content: url(./assets/icon2.png);
+}
+.contact_3::before {
+    content: url(./assets/icon3.png);
+}
+
+.contact-list.social-net {
+    text-align: center;
+}
+
+.contact-list .social-net li {
+    display: inline;
+}
+
+.contact-list .social-net li a{
+    display: inline;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.contact-list .social-net li a img {
+    left: 0;
+    width:30px;
+    height: 30px;
+}
+/* ======= END OF KONTAKT ======*/
+
+/* ====== FOOTER ====== */
+footer {
+    width: 100%;
+    background: #2b2b2b;
+    height: 110px;
+}
+
+footer p {
+    position: relative;
+    text-align: center;
+    padding: 20px 20px 0px;
+    font-size: 1.6em;
+}
+
+footer a {
+    display: block;
+    position: relative;
+   text-align: center;
+}
+
+/* ====== ENF OF FOOTER ======/
+/* ======= MODAL ====== */
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50px;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal-wrap {
+    max-width: 650px;
+    max-height: 90%;
+    width: 90%;
+    padding: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-x: hidden;
+}
+
+.modal-wrap > * {
+    display: inline-block;
+}
+
+
+.modal-wrap .close span {
+    background-color: #d6d6d6;
+}
+
+.modal-wrap h4 {
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.modal-inner {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+input {
+    border: 3px solid #d6d6d6;
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #939191;
+    font-size: 16px;
+    font-style: italic;
+}
+
+input:focus {
+    outline: none;
+    border-color: #55557d;
+    box-shadow: 7px 7px 21px  rgba(85, 85, 125, 0.3);
+}
+
+input.btn {
+    max-width: 300px;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    background-color: #55557d;
+}
+
+input.btn:hover {
+    border-color: #55557d;
+}
+
+ input[type="date"]:before,{
+    content: attr(placeholder) !important;
+    color: #d6d6d6;
+    font-style: italic;
+    margin-right: 0.5em;
+  }
+
+  /* ===== Modal 2 ==== */
+
+textarea,
+pre {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+}
+
+.expandingArea {
+    position: relative;
+    border: 3px solid #d6d6d6;
+    border-radius: 5px;
+    background: #fff;
+    margin-bottom: 20px;
+    min-height: 100px;
+    width: 100%;
+}
+
+.expandingArea:focus-within,
+.input-file:focus-within {
+    border: 3px solid #55557d;
+    box-shadow: 7px 7px 21px  rgba(85, 85, 125, 0.3);
+}
+
+.expandingArea > textarea,
+.expandingArea > pre {
+    padding: 5px;
+    background: transparent;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.expandingArea > textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+}
+
+.expandingArea.active > textarea {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    resize: none;
+}
+
+.expandingArea > pre {
+    display: none;
+}
+
+.expandingArea.active pre {
+    display: block;
+    visibility: hidden;
+}
+
+/* ==== Modal 3 ===== */
+.file-hide {
+    position: relative;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: none;
+}
+
+.prilozite:after {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin: 0;
+    padding: 0;
+    content: url('./assets/paperclip.jpg');
+    font-size: 2.4em;
+    color: #4d4d4d;
+    z-index: 0;
+}
+
+.hide {
+  position:relative;
+  opacity: 0;
+  z-index: 10;
+}
+
+.prilozite {
+  position: absolute;
+  top: 9%;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  opacity: 1;
+  z-index: -3;
+}
+
+/* ======= END OF MODAL ======= */
+
+/* ====== MEDIA QUERIES ====== */
+
+@media only screen and (min-width: 520px) {
+    .hero-left {
+    padding-bottom: 250px;
+    }
+    .btn2 {
+        margin-left: 0 auto;
+    }
+    .service {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    .language p {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    /* =====  KONTAKT ====== */
+    .contact-list {
+        flex-direction: row;
+    }
+    .social-net {
+      text-align: center;
+    padding-left: 15px;
+}
+
+    /* ====== FOOTER ====== */
+    footer p {
+        top: 30px;
+        display: inline;
+    }
+
+    footer a {
+        position: absolute;
+        margin: 0;
+        right: 50px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .hero {
+        background-position: 50% 50%;
+    }
+
+    .translation-areas p {
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    /* ==== USMENO PREVODJENJE ===== */
+     .verbal-translation {
+        position: relative;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    .verbal-translation .container {
+    padding-left: 0;
+}
+    .image {
+        display: block;
+        float: left;
+        width: 50%;
+        padding-bottom: 39.25%;
+    }
+    .verbal-text {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        text-align: left;
+        min-width: 300px;
+        max-width: 600px;
+        padding-left: 50px;
+    }
+    .verbal-text h3 {
+        display: inline-block;
+        text-align: left;
+    }
+    .verbal-text p {
+        display: inlin-block;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    /* ====== PREVODILACKE USLUGE ====== */
+    .service {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    /*===== OBLASTI PREVODJENJA ======= */
+    .translation-areas h2 {
+        text-align: left;
+    }
+
+    .verbal-text h3::after,
+    .text-right h2::after,
+    .translation-areas h2::after {
+        margin-left: auto;
+        left: auto;
+    }
+
+    .text-area {
+        padding: 40px 70px;
+        position: relative;
+        min-width: 480px;
+        max-height: auto;
+        overflow: hidden;
+
+    }
+    .text  {
+        float: left;
+        display: inline-block;
+        position: relative;
+        margin: 0;
+        padding: 10px 0 0 0;
+        max-width: 50%;
+        max-height: 500px;
+    }
+
+    .text h3, .text p {
+        display: inline-block;
+        max-width: 100%;
+        text-align: left;
+    }
+    .text p {
+        padding-left: 0;
+    }
+    .flexslider .slides img {
+        display: inline;
+    }
+
+    .image_2 {
+        width: 50%;
+        padding-bottom: 40.25%;
+    }
+
+    .verbal-text button {
+        margin-left: 0;
+        left: 0;
+    }
+
+
+    /*===== O NAMA ===== */
+    .about {
+        grid-template-columns: 1fr 1fr;
+    }
+    .animation {
+        padding-bottom: 80.25%;
+    }
+    .text-right {
+        padding-left: 30px;
+    }
+    .text-right h2 {
+        text-align: left;
+    }
+    .text-right h3 {
+        text-align: left;
+    }
+
+    .text-right button {
+        margin-left: 0;
+    }
+
+    .price-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* ====== MODALS ===== */
+
+    .modal_2 input  {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: calc(100% - 22px);
+    }
+
+    .modal_2 input.btn {
+        margin: 0 auto;
+    }
+
+    input.width_2  {
+        width: calc(50% - 9px);
+      }
+
+    input.type_2  {
+        margin-right: 15px;
+      }
+
+    input.date_2 {
+        padding: 17px;
+    }
+
+    .input-file  {
+        width: calc(100% - 22px);
+        margin-left: 10px;
+    }
+
+}
+
+@media only screen and (min-width: 800px) {
+    .hero {
+        padding-top: 80px;
+        background-position: right;
+        background-size: 60%;
+    }
+
+    .hero div:first-of-type {
+        background-color: transparent;
+    }
+    .crown {
+        grid-template-columns: repeat(4, 200px);
+        justify-content: space-around;
+    }
+}
+
+@media only screen and  (min-width: 992px) {
+    .verbal-text h3::after,
+    .text-right h2::after, {
+        margin-left: auto;
+        left: auto;
+    }
+
+    .list-of-services {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .translation-areas {
+        padding-bottom: 80px
+    }
+
+    .written-price {
+        width: 360px;
+    }
+    .price-list .price-card li::after {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background-color: #ddd;
+    bottom: 30px;
+    left: 52%;
+    top: 20px;
+    position: absolute;
+    z-index: 4;
+}
+    .verbal-price  {
+    padding-bottom: 0px;
+}
+    .contact-list {
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    /* ===== HEADER ===== */
+    header {
+        padding: 10px 20px 10px;
+    }
+    .header-logo {
+        padding: 10px 0;
+    }
+    .navigation {
+        display: block !important ;
+        position: fixed;
+        width: auto;
+        height: auto;
+        background: inherit;
+        float: right;
+        transform: translate3d(0, 0, 0) !important;
+    }
+
+    .navigation li {
+        float: left;
+    }
+
+    .navigation a {
+        position: relative;
+        color: #2b2b2b;
+        margin-left: 20px;
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+    .navigation a.active,
+    .navigation a:hover {
+        transition: all .5s;
+        color: #55557d;
+    }
+
+    .navigation ul li a:after {
+        content: '.';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        color: transparent;
+        background-color: #55557d;
+        height: 1px;
+    }
+    .navigation a:hover:after {
+        transition: all .5s;
+        width: 100%;
+    }
+
+    .burger,
+    .navigation .close {
+        display: none !important;
+    }
+
+     .service {
+        grid-template-columns: 220px 220px 220px 220px;
+    }
+
+    .star {
+        height: 190px;
+        margin: 20px auto;
+    }
+      /* ===== CENOVNIK =====*/
+
+     .price-list {
+        grid-template-columns: 400px 400px;
+    }
+    .verbal-price {
+    width: 340px;
+    max-height: 400px;
+}
+
+    .contact {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .contact-list {
+        padding-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    body {
+        font-size: 62.25%;
+    }
+    section {
+        padding-top: 50px;
+    }
+    .service {
+        grid-template-columns: repeat(5, 220px);
+    }
+
+    .service-card h4 {
+        font-size: 1.8em;
+    }
+    .service-card p {
+        font-size: 1.6em;
+    }
+    .brake:after {
+        content: "1300px";
+        background-color: red;
+    }
+
+    .price {
+        padding-bottom: 80px;
+    }
+    .price-list {
+        grid-template-columns: 400px 400px 400px;
+    }
+
+    .written-price {
+        margin-top: 60px;
+    }
+
+    .hero-left {
+        max-width: 690px;
+    }
+
+    .hero-left h1 {
+        font-size: 4em;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.text-center {
+    text-align: center;
+}
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster */
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

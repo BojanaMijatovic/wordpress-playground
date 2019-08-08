@@ -1,0 +1,79 @@
+version: "3.5"
+
+services:
+
+  mariadb:
+    image: wodby/mariadb
+    restart: unless-stopped
+    container_name: "Wordpress--Playground--MariaDB"
+    stop_grace_period: 30s
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    volumes:
+      - Wordpress--DB--Playground:/var/lib/mysql
+      - ./databases:/var/lib/mysql/databases/
+
+  php:
+    image: wodby/wordpress-php
+    restart: unless-stopped
+    container_name: "Wordpress--Playground--PHP"
+    environment:
+      DB_HOST: mariadb
+      DB_USER: wordpress
+      DB_PASSWORD: wordpress
+      DB_NAME: wordpress
+      PHP_FPM_USER: wodby
+      PHP_FPM_GROUP: wodby
+    volumes:
+      - ./webroot:/var/www/html
+
+  nginx:
+    image: wodby/nginx
+    container_name: "Wordpress--Playground--Nginx"
+    restart: unless-stopped
+    depends_on:
+      - php
+    environment:
+      NGINX_ERROR_LOG_LEVEL: debug
+      NGINX_BACKEND_HOST: php
+      NGINX_VHOST_PRESET: wordpress
+    networks:
+      - default
+      - web
+    volumes:
+      - ./webroot:/var/www/html
+    labels:
+      - traefik.backend=Wordpress--Playground--Nginx
+      - traefik.frontend.rule=Host:Playground.loc
+      - traefik.docker.network=web
+      - traefik.enable=true
+      - traefik.port=80
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: "Wordpress--Playground--PHPMyAdmin"
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: wordpress
+    networks:
+      - default
+      - web
+    labels:
+      - traefik.backend=Wordpress--Playground--PHPMyAdmin
+      - traefik.frontend.rule=Host:pma.Playground.loc
+      - traefik.docker.network=web
+      - traefik.enable=true
+      - traefik.port=80
+
+volumes:
+  Wordpress--DB--Playground:
+    external: true
+
+networks:
+  web:
+    external: true
