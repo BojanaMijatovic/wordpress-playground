@@ -1,14 +1,13 @@
 // MOBILE NAVIGATION
 $('.burger').on('click', function(event) {
-  $('.nav').addClass('show');
-  $('.burger').addClass('not');
-  $('.header .close').addClass('show-close');
+  $('.nav').css('display', 'table');
+  $('.nav').css('transform', 'translate3d(0, 0, 0)');
+  $('.burger').css('display','none');
 });
 
-$('.close, .nav a').on('click', function(event) {
-  $('.nav').removeClass('show');
-  $('.burger').removeClass('not');
-  $('.header .close').removeClass('show-close');
+$('.nav .close, .nav a').on('click', function(event) {
+  $('.nav').css('transform', 'translate3d(150%, 0, 0)');
+  $('.burger').css('display','block');
 });
 
 $('.nav a').on('click', function(event) {
@@ -16,22 +15,25 @@ $('.nav a').on('click', function(event) {
   $(this).addClass('active');
 });
 
+
 // MODAL
 $('.ask').on('click', function(event) {
+	event.preventDefault();
 	/* Act on the event */
-	$('.modal__first').addClass('open');
+	$('.modal_1').addClass('open');
 });
-
-$('.close').on('click', function(event) {
+$('.modal .close').on('click', function(event) {
+	event.preventDefault();
 	/* Act on the event */
-	$('.modal__first').removeClass('open');
+	$('.modal_1').removeClass('open');
 });
 
 $('.send').on('click', function(event) {
+	event.preventDefault();
 	/* Act on the event */
 	$('.modal_2').addClass('open');
 });
-$('.modal__inner .close').on('click', function(event) {
+$('.modal .close').on('click', function(event) {
 	event.preventDefault();
 	/* Act on the event */
 	$('.modal_2').removeClass('open');
@@ -42,7 +44,7 @@ $('.hire').on('click', function(event) {
 	/* Act on the event */
 	$('.modal_3').addClass('open');
 });
-$('.modal__inner .close').on('click', function(event) {
+$('.modal .close').on('click', function(event) {
 	event.preventDefault();
 	/* Act on the event */
 	$('.modal_3').removeClass('open');
