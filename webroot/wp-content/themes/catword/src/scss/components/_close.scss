@@ -1,0 +1,33 @@
+.close {
+  display: none;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  padding: 15px;
+  margin: 0;
+  &.show-close {
+    display: block;
+  }
+  &__line {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: $primary-color;
+    transform: rotate(45deg);
+    .modal__wrap & {
+      background-color: $placeholder-text;
+    }
+  }
+  &--x {
+    top: -4px;
+    transform: rotate(-45deg);
+    .modal & {
+      background-color: $placeholder-text;
+    }
+  }
+  .modal__inner & {
+    display: block;
+    right: 0;
+  }
+}

@@ -1,0 +1,28 @@
+.hero {
+  @include container;
+  padding: 60px 0 0;
+  background: url("assets/hero.svg") center/cover no-repeat;
+  &__cover {
+    background-color: rgba(255, 217, 146, .5);
+    @include breakpoint(brian) {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+  &__left {
+    max-width: 500px;
+    padding: 80px 15px 50px;
+    @include breakpoint(stewie) {
+      padding-bottom: 250px;
+    }
+    @include breakpoint(peter) {
+      max-width: 690px;
+    }
+  }
+  @include breakpoint(brian) {
+    background-position: 50% 50%;
+  }
+  @include breakpoint(meg) {
+    background-position: 100% 28%;
+    background-size: 75%;
+  }
+}

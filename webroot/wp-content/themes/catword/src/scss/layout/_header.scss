@@ -1,0 +1,34 @@
+.header {
+  @include container;
+  box-sizing: initial;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: $shadow-page;
+  z-index: 20;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 0 0;
+    padding: 20px 20px 20px 0;
+    @include breakpoint(lois) {
+      padding: 0px 20px 0 0;
+    }
+  }
+  &__logo {
+    display: inline-block;
+    padding-bottom: 10px;
+    @include breakpoint(lois) {
+      padding: 20px 0;
+    }
+  }
+
+  &__img {
+    width: 90px;
+    height: 20px;
+  }
+
+  @include breakpoint(lois) {
+    padding: 0px 20px 10px;
+  }
+}
