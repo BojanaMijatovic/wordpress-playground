@@ -10,29 +10,13 @@
 <body <?php body_class();?>>
 
 
-<header class="header">
-  <div class="header__container">
-   <a href="#" class="header__logo"><img class="header__img" src="<?php bloginfo('template_directory');?>/assets/logo.png" alt="catword logo"></a>
+<header class="container">
+   <a href="#" class="header-logo"><img src="<?php bloginfo('template_directory');?>/assets/logo.png" alt="catword logo"></a>
     <?php wp_nav_menu (
       array(
         'menu' => 'top_menu',
         // 'theme_location' => 'top_menu',
-        'container_class' => 'nav',
-        'menu_class' => 'unstyle-list',
+        'menu_class' => 'navigation', //this is how we assign class to some element, because they already have it automatically and we can change it if we want to. We just have to see what the class is first
       )
     );?>
-
-    <button class="burger">
-      <span class="burger__line burger--first"></span>
-      <span class="burger__line burger--second"></span>
-      <span class="burger__line burger--third"></span>
-    </button>
-
-    <button class="close">
-      <span class="close__line"></span>
-      <span class="close__line close--x"></span>
-    </button>
-
-
-  </div>
 </header>
