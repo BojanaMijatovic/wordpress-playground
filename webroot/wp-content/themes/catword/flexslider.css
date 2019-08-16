@@ -35,7 +35,7 @@
   -webkit-backface-visibility: hidden;
 }
 .flexslider .slides img {
-  width: 100%;
+  width: 95%;
   display: block;
 }
 .flexslider .slides:after {

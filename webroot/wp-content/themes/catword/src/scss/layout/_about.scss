@@ -1,0 +1,60 @@
+.about {
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 50px;
+  @include breakpoint(brian) {
+    padding: 0;
+  }
+  &__left {
+    @include image_div;
+    width: 100%;
+    padding-bottom: 56.25%;
+    @include breakpoint(brian) {
+      width: 50%;
+      padding-bottom: 39.25%;
+    }
+  }
+  &__image {
+    @include image_position;
+  }
+  &__right {
+    @include column;
+    position: relative;
+    padding: 20px;
+    max-width: 560px;
+    transition: all 0.5s ease-in;
+    @include breakpoint(brian) {
+      padding-right: 50px;
+      align-items: flex-start;
+    }
+  }
+  &__title {
+    @include breakpoint(brian) {
+      margin: 0;
+      text-align: left;
+    }
+  }
+  &__subtitle {
+    @include breakpoint(brian) {
+      margin: 10px 0;
+      text-align: left;
+    }
+  }
+  &__description {
+    padding-bottom: 10px;
+    @include breakpoint(brian) {
+      text-align: left;
+      font-size: 2em;
+    }
+  }
+}
+
+.hidden-text {
+    display: none;
+}
+
+.dots {
+    display: inline;
+}

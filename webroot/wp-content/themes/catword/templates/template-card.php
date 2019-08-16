@@ -15,10 +15,10 @@
      $description = get_sub_field('card_content');
  ?>
 
- <div class="service-card written">
+ <div class="service__card">
    <?php echo $card;?>
-   <h4><?php echo $title;?></h4>
-   <p><?php echo $description;?></p>
+   <h4 class="service__card--title"><?php echo $title;?></h4>
+   <p class="service__card--description"><?php echo $description;?></p>
  </div>
 
 <?php endwhile; ?>

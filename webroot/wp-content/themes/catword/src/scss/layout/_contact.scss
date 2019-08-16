@@ -1,0 +1,34 @@
+.contact {
+  padding: 50px;
+  @include container;
+  &__title {
+    font-size: 4em;
+    color: $subtitle-color;
+  }
+  &__list {
+    @include row;
+    margin: 20px auto;
+    padding-bottom: 50px;
+    max-width: 600px;
+    &--item {
+      position: relative;
+      margin-top: 10px;
+      padding: 20px;
+      width: 250px;
+      height: 60px;
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  &__social{
+    @include row;
+    padding: 40px 0;
+    &--item {
+      padding: 5px;
+    }
+    &--image {
+      width: 30px;
+    }
+  }
+}

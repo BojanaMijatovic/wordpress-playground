@@ -1,0 +1,28 @@
+// MEDIA Queries
+@mixin breakpoint($point){
+  @if $point == stewie {
+    @media only screen and (min-width: 520px) {
+      @content;
+    }
+  } @else if $point == brian {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == meg {
+    @media only screen and  (min-width: 800px) {
+      @content;
+    }
+  } @else if $point == chris {
+    @media only screen and  (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == lois {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == peter {
+    @media only screen and (min-width: 1300px) {
+      @content;
+    }
+  }
+}

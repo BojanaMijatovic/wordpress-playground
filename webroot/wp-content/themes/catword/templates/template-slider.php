@@ -1,8 +1,8 @@
 <?php
   /* Template Name: slider */
   get_header(); ?>
-<section class="translation-areas" id="areas">
-  <div class="container">
+<section class="areas" id="areas">
+  <div>
     <h2>Oblasti prevođenja</h2>
     <?php
       $slides = get_field('slider');
@@ -15,13 +15,13 @@
           $sliderImage = get_sub_field('slider_image');
 
           ?>
-          <li class="text-area">
-            <div class="text">
-              <h3> <?php echo $sliderText['slider_title'];?></h3>
-              <p> <?php echo $sliderText['slider_description'];?>  </p>
+          <li class="areas__content">
+            <div class="areas__content--text">
+              <h3 class="areas__content--title"> <?php echo $sliderText['slider_title'];?></h3>
+              <p class="areas__content--description"> <?php echo $sliderText['slider_description'];?></p>
             </div>
-            <div class="image_2">
-              <img src="<?php echo $sliderImage['url']; ?>" alt="<?php echo $sliderImage['alt']; ?>" /
+            <div class="areas__image">
+              <img class="areas__image--position" src="<?php echo $sliderImage['url']; ?>" alt="<?php echo $sliderImage['alt']; ?>" /
             </div>
           </li>
         <?php endwhile; ?>

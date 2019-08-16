@@ -1,0 +1,50 @@
+.areas {
+    padding-bottom: 60px;
+    @include breakpoint(chris) {
+      padding-bottom: 80px;
+    }
+    &:nth-child(1) {
+      @include container;
+    }
+    &__content {
+      @include breakpoint(brian) {
+        padding: 40px 70px;
+        position: relative;
+        min-width: 480px;
+        max-height: auto;
+        overflow: hidden;
+      }
+      &--text {
+        @include breakpoint(brian) {
+          position: relative;
+          float: left;
+          padding: 10px 0 0 0;
+          max-width: 50%;
+        }
+      }
+      &--title {
+        @include breakpoint(brian) {
+          text-align: left;
+        }
+      }
+      &--description {
+        @include breakpoint(brian) {
+          text-align: left;
+          padding-right: 20px;
+        }
+      }
+    }
+    &__image {
+      @include image_div;
+      @include breakpoint(brian) {
+        width: 50%;
+        padding-bottom: 40.25%;
+      }
+      &--position {
+        @include image_position;
+          @include breakpoint(brian) {
+            width: 95%;
+          }
+      }
+   }
+}
