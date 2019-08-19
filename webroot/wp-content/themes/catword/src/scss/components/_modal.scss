@@ -14,7 +14,10 @@
         width: 90%;
         padding: 20px;
         background-color: #fff;
-        overflow-x: hidden;
+       overflow-x: hidden;
+       & > * {
+         display: inline-block;
+       }
     }
     &__title {
       font-size: 3em;
@@ -29,7 +32,7 @@
     }
 }
 
-.modal.open {
+.open {
   display: block;
 }
 

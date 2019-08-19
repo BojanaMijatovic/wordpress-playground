@@ -1,15 +1,25 @@
 // MOBILE NAVIGATION
-$('.burger').on('click', function(event) {
-  $('.nav').addClass('show');
-  $('.burger').addClass('not');
-  $('.header .close').addClass('show-close');
+
+
+//JQUERY TOGGLE
+$(".burger, .header .close").click(function(){
+  $(this).toggleClass("is-active");
+  $('.nav').toggleClass('show');
+  $('.header .close').toggleClass('show-close');
 });
 
-$('.close, .nav a').on('click', function(event) {
-  $('.nav').removeClass('show');
-  $('.burger').removeClass('not');
-  $('.header .close').removeClass('show-close');
-});
+//VANILA JS
+// $('.burger').on('click', function(event) {
+//   $('.nav').addClass('show');
+//   $('.burger').addClass('not');
+//   $('.header .close').addClass('show-close');
+// });
+//
+// $('.close, .nav a').on('click', function(event) {
+//   $('.nav').removeClass('show');
+//   $('.burger').removeClass('not');
+//   $('.header .close').removeClass('show-close');
+// });
 
 $('.nav a').on('click', function(event) {
   $('.nav a').removeClass('active');
@@ -17,43 +27,36 @@ $('.nav a').on('click', function(event) {
 });
 
 // MODAL
-$('.ask').on('click', function(event) {
-	/* Act on the event */
-	$('.modal__first').addClass('open');
+
+$(".ask, .modal .close").click(function(){
+  console.log('Tell me more bitch');
+  $('.modal__first').toggleClass('open');
+  $('.modal .close').toggleClass('show-close');
 });
 
-$('.close').on('click', function(event) {
-	/* Act on the event */
-	$('.modal__first').removeClass('open');
+$(".send, .modal .close").click(function(){
+  $('.modal__second').toggleClass('open');
+  $('.modal .close').toggleClass('show-close');
 });
 
-$('.send').on('click', function(event) {
-	/* Act on the event */
-	$('.modal_2').addClass('open');
-});
-$('.modal__inner .close').on('click', function(event) {
-	event.preventDefault();
-	/* Act on the event */
-	$('.modal_2').removeClass('open');
+$(".hire, .modal .close").click(function(){
+  $('.modal__third').toggleClass('open');
+  $('.modal .close').toggleClass('show-close');
 });
 
-$('.hire').on('click', function(event) {
-	event.preventDefault();
-	/* Act on the event */
-	$('.modal_3').addClass('open');
-});
-$('.modal__inner .close').on('click', function(event) {
-	event.preventDefault();
-	/* Act on the event */
-	$('.modal_3').removeClass('open');
+
+$(".modal .close").click(function(){
+  console.log('Stewie rules');
 });
 
-$(function() {
-  $('.input-file > input').on('change', function(){
-    var inputValue = $(this).val();
-    $('.input-value').html(inputValue);
-  });
-});
+
+
+// $(function() {
+//   $('.input-file > input').on('change', function(){
+//     let inputValue = $(this).val();
+//     $('.input-value').html(inputValue);
+//   });
+// });
 
 var safari   = navigator.userAgent.indexOf("Safari") > -1;
 var chrome   = navigator.userAgent.indexOf('Chrome') > -1;
