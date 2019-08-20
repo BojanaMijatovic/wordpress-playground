@@ -3,7 +3,7 @@
     top: 0;
     left: 25%;
     width: 75%;
-    height: 100%;
+    height: auto;
     background-color: $subtitle-color;
     text-align: center;
     color: #fff;
@@ -11,10 +11,9 @@
     transition: all .5s ease-in;
     transform: translate3d(150%, 0, 0);
     @include breakpoint(lois) {
-      position: relative;
+      width: 74%;
       background-color: rgba(0, 0, 0, 0);
       transform: translate3d(0, 0, 0);
-      right: 10px;
     }
     ul {
       margin: auto;
@@ -25,10 +24,8 @@
         color: #fff;
       }
       @include breakpoint (lois) {
-        margin-right: 0;
-        li {
-          float: left;
-        }
+        @include row;
+        justify-content: flex-end;
           a {
             position: relative;
             margin-left: 20px;

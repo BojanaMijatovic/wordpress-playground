@@ -25,12 +25,22 @@
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 15px;
     padding-right: 15px;
+    font-size: 15px;
+  }
+  &:nth-child(2) {
+    padding: 50px 20px;
+    @include breakpoint(brian) {
+      align-self: flex-start;
+      padding: 40px 20px 135px;
+      ul {
+        padding-top: 50px; 
+      }
+    }
   }
   &:hover {
     transition: all .5s ease-in;
-    background-color: #55557d;
+    background-color: $primary-color;
     color: #fff;
     & > h3 {color: #fff;}
     & > p{color: #fff;}

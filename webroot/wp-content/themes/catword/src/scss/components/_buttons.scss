@@ -9,14 +9,17 @@
     background-color: $button-background;
   }
   &--purple {
-    @include text(relative, 2.8em, left, 400)
+    @include text(relative, 18px, left, 400);
     display: block;
     margin: 20px auto;
     padding: 20px;
     background-color: $primary-color;
     border-color: $primary-color;
     .modal & {
+      display: block;
+      margin: 0 auto;
       max-width: 300px;
+      text-align: center;
     }
   }
   .about__right & {

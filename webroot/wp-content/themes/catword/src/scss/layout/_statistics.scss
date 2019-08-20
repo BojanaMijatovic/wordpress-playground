@@ -9,10 +9,7 @@
       padding-right: 0;
     }
     &__field {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
+      @include row;
       padding: 10px;
     }
     &__content {
@@ -27,11 +24,7 @@
     }
     &:after {
         content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        @include absolute;
         background: rgba(47,47,69, 0.8);
         z-index: -2;
     }

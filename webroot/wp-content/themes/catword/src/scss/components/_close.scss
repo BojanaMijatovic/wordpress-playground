@@ -6,8 +6,10 @@
   padding: 15px;
   margin: 0;
   cursor: pointer;
-  &.show-close {
-    display: block;
+  .modal & {
+    display: inline-block;
+    right: 0;
+    z-index: 30;
   }
   &__line {
     position: relative;
@@ -16,20 +18,16 @@
     height: 4px;
     background-color: $primary-color;
     transform: rotate(45deg);
-    .modal__wrap & {
+    .modal & {
       background-color: $placeholder-text;
     }
   }
   &--x {
     top: -4px;
     transform: rotate(-45deg);
-    .modal & {
-      background-color: $placeholder-text;
-    }
-  }
-  .modal & {
-    // display: block;
-    right: 0;
-    z-index: 72;
   }
 }
+
+.show-close {
+    display: block;
+  }

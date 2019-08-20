@@ -8,7 +8,7 @@ $(".burger, .header .close").click(function(){
   $('.header .close').toggleClass('show-close');
 });
 
-//VANILA JS
+//jQuery
 // $('.burger').on('click', function(event) {
 //   $('.nav').addClass('show');
 //   $('.burger').addClass('not');
@@ -28,27 +28,31 @@ $('.nav a').on('click', function(event) {
 
 // MODAL
 
-$(".ask, .modal .close").click(function(){
+$(".ask, .modal__first .close").click(function(e){
+  e.preventDefault();
   console.log('Tell me more bitch');
   $('.modal__first').toggleClass('open');
   $('.modal .close').toggleClass('show-close');
 });
 
-$(".send, .modal .close").click(function(){
+$(".send, .modal__second .close").click(function(e){
+  e.preventDefault();
+  console.log('I like you dog');
   $('.modal__second').toggleClass('open');
   $('.modal .close').toggleClass('show-close');
 });
 
-$(".hire, .modal .close").click(function(){
+$(".hire, .modal__third .close").click(function(e){
+  e.preventDefault();
+  console.log('I hate you dog');
   $('.modal__third').toggleClass('open');
   $('.modal .close').toggleClass('show-close');
 });
 
-
-$(".modal .close").click(function(){
-  console.log('Stewie rules');
-});
-
+// $('.modal .close').on('click', function(event) {
+//   console.log('Stewie rules');
+//    $('.modal__first').removeClass('open');
+// });
 
 
 // $(function() {

@@ -25,6 +25,11 @@
   }
 
   &__text {
+    &--title {
+      &::after {
+        @include line;
+      }
+    }
     &--subtitle {
       font-size: 2.2em;
     }
@@ -38,6 +43,9 @@
       max-width: 600px;
       padding-left: 50px;
       &--title {
+        &::after {
+          @include line_reset;
+        }
         text-align: left;
       }
       &--subtitle {

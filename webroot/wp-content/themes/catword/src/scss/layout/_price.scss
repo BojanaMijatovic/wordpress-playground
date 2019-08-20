@@ -8,6 +8,12 @@
     @include row;
     &:nth-child(2) ul {
       padding-bottom: 50px;
+      padding-top: 25px;
+    }
+  }
+  h2 {
+    &::after {
+      @include line;
     }
   }
 }

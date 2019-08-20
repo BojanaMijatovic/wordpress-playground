@@ -1,11 +1,10 @@
 .about {
   @include container;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  @include row;
   padding-top: 50px;
   @include breakpoint(brian) {
     padding: 0;
+    justify-content: space-between;
   }
   &__left {
     @include image_div;
@@ -22,18 +21,23 @@
   &__right {
     @include column;
     position: relative;
-    padding: 20px;
-    max-width: 560px;
+    width: 50%;
     transition: all 0.5s ease-in;
     @include breakpoint(brian) {
-      padding-right: 50px;
       align-items: flex-start;
+      padding-left: 20px;
     }
   }
   &__title {
+    margin: 10px 0;
+    &::after {
+      @include line;
+    }
     @include breakpoint(brian) {
-      margin: 0;
       text-align: left;
+      &::after {
+        @include line_reset;
+      }
     }
   }
   &__subtitle {
@@ -49,12 +53,4 @@
       font-size: 2em;
     }
   }
-}
-
-.hidden-text {
-    display: none;
-}
-
-.dots {
-    display: inline;
 }

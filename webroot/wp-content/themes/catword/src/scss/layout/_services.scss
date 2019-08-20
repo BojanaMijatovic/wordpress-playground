@@ -2,6 +2,11 @@
   @include container;
   padding-top: 30px;
   background-color: $section-background;
+  h2 {
+    &::after {
+      @include line;
+    }
+  }
   &__language {
     padding-bottom: 50px;
     height: 100%;
@@ -28,9 +33,9 @@
     max-width: 120px;
     text-align: center;
     &--img {
+      display: inline-block;
       margin: 20px 20px 15px 20px;
       border-radius: 50%;
-      display: inline-block;
     }
     &--title {
       display: inline-block;

@@ -47,4 +47,9 @@
           }
       }
    }
+   h2 {
+     &::after {
+       @include line;
+     }
+   }
 }

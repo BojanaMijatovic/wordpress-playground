@@ -4,6 +4,9 @@
   &__title {
     font-size: 4em;
     color: $subtitle-color;
+    &::after {
+      @include line;
+    }
   }
   &__list {
     @include row;

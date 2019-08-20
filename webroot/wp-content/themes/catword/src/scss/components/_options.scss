@@ -1,0 +1,32 @@
+.languages {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  padding: 30px 15px;
+  width: 100%;
+  border: 3px solid $placeholder-text;
+  border-radius: 5px;
+  font-size: 1.6em;
+    & > select {
+      @include absolute;
+      padding: 0px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+}
+
+.date {
+  position: relative;
+  z-index: 4;
+  & > input {
+    padding: 26px 15px;
+    color: $placeholder-text;
+    font-size: 16px;
+  }
+  @include breakpoint(brian) {
+    width: calc(100% / 2 - 10px);
+    display: block;
+    float: right;
+  }
+}

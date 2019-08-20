@@ -1,9 +1,14 @@
+.list-of-services {
+  padding: 30px 0;
+  h3 {
+    &::after {
+      @include line;
+    }
+  }
+}
+
 .service {
   @include container;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  @include row;
   margin: 40px 0 0;
 }
