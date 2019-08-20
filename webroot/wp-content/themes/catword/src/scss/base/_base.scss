@@ -13,6 +13,11 @@ img {
    height: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
+
 //List
 .unstyle-list {
   list-style: none;
@@ -31,4 +36,14 @@ button {
 
 .dots {
     display: inline;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
 }

@@ -3,7 +3,7 @@
     top: 0;
     left: 25%;
     width: 75%;
-    height: auto;
+    height: 100%;
     background-color: $subtitle-color;
     text-align: center;
     color: #fff;
@@ -11,6 +11,7 @@
     transition: all .5s ease-in;
     transform: translate3d(150%, 0, 0);
     @include breakpoint(lois) {
+      height: auto;
       width: 74%;
       background-color: rgba(0, 0, 0, 0);
       transform: translate3d(0, 0, 0);
