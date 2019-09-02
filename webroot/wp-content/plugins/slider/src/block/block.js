@@ -95,100 +95,70 @@ registerBlockType( 'slider/my-slider', {
         }
 
         const addMoreSlides = (slides, newSlide) => {
+          slides = [...attributes.slides];
+          setAttributes({slides: slides})
+
           slides.push(newSlide);
-
-
           setAttributes({slides: slides});
-          console.log('addMoreSlides')
         }
 
-    const numberOfSlides = attributes.slides !== undefined ? attributes.slides.length : 0;
+        const numberOfSlides = attributes.slides !== undefined ? attributes.slides.length : 0;
 
-    const form = (
-      <form  onSubmit={submitSlides} >
-        <input name="numberOfSlides" type="number" placeholder="Number of Slides" defaultValue={numberOfSlides} />
-        <input type="submit" value="Submit"/>
-      </form>
-    );
+        const form = (
+          <form  onSubmit={submitSlides} >
+            <input name="numberOfSlides" type="number" placeholder="Number of Slides" defaultValue={numberOfSlides} />
+            <input type="submit" value="Submit"/>
+          </form>
+        );
 
-    if(numberOfSlides < 1) return form;
+        if(numberOfSlides < 1) return form;
 
-    let slides = [];
-    attributes.slides.forEach((slide, i) => {
-      slides.push(
-        <div className={'slider'}>
-          <div className={'slider__image'}>
-            <MediaUploadCheck>
-              <MediaUpload
-                onSelect={ ( media ) => mediaSelect(media, attributes, i)}
-                value={slide.img !== undefined ? slide.img.id : null}
-                render={ ( { open } ) => mediaRender(open, slide)}
-              />
-            </MediaUploadCheck>
-          </div>
-          <div className={"slider__text"}>
-            <RichText
-              tagName="h3"
-              className={'slider__text--title'}
-              value={slide.title}
-              placeholder="Enter Slides Title"
-              onChange={(content) => setTitle(content, attributes, i)}
-              />
-            <RichText
-              tagName="p"
-              className={'slider__text--content'}
-              value={slide.description}
-              placeholder="Enter Your Content"
-              onChange={ ( content ) => setDescription(content, attributes, i) }
-            />
-          </div>
+        let slides = [];
+        let newSlide = [...slides]
+        attributes.slides.forEach((slide, i) => {
+          slides.push(
+            <div className={'slider'}>
+              <div className={'slider__image'}>
+                <MediaUploadCheck>
+                  <MediaUpload
+                    onSelect={ ( media ) => mediaSelect(media, attributes, i)}
+                    value={slide.img !== undefined ? slide.img.id : null}
+                    render={ ( { open } ) => mediaRender(open, slide)}
+                  />
+                </MediaUploadCheck>
+              </div>
+              <div className={"slider__text"}>
+                <RichText
+                  tagName="h3"
+                  className={'slider__text--title'}
+                  value={slide.title}
+                  placeholder="Enter Slides Title"
+                  onChange={(content) => setTitle(content, attributes, i)}
+                  />
+                <RichText
+                  tagName="p"
+                  className={'slider__text--content'}
+                  value={slide.description}
+                  placeholder="Enter Your Content"
+                  onChange={ ( content ) => setDescription(content, attributes, i) }
+                />
+              </div>
+            </div>
+          )
+        });
+
+
+        return (
+        <div>
+          {slides}
+          <Button
+            className="add__more"
+            onClick={(slide) => addMoreSlides(slides, newSlide) }>
+              Add more slides
+          </Button>
         </div>
       )
-    });
-
-    let newSlide = (newSlide, i) => {
-      return (
-      <div className={'slider'}>
-        <div className={'slider__image'}>
-          <MediaUploadCheck>
-            <MediaUpload
-              className={'slider__image--img'}
-              onSelect={ ( media ) => mediaSelect(media, attributes, i)}
-              value={newSlide.img !== undefined ? newSlide.img.id : null}
-              render={ ( { open } ) => mediaRender(open, slide)}
-            />
-          </MediaUploadCheck>
-        </div>
-        <div className={'slider__text'}>
-          <RichText
-            tagName="h3"
-            className={'slider__text--title'}
-            value={newSlide.title}
-            placeholder="Enter Slides Title"
-            onChange={(content) => setTitle(content, attributes, i)}
-            />
-          <RichText
-            tagName="p"
-            className={'slider__text--content'}
-            value={newSlide.description}
-            placeholder="Enter Your Content"
-            onChange={ ( content ) => setDescription(content, attributes, i) }
-          />
-        </div>
-      </div>
-    )};
-
-    return (
-    <div>
-      {slides}
-      <Button
-        className="add__more"
-        onClick={(slide) => addMoreSlides(slides, newSlide) }>
-          Add more slides
-      </Button>
-    </div>
-  )
-    },
+        },
 
     save: ( {attributes, setAttributes }) => {
 
@@ -216,10 +186,10 @@ registerBlockType( 'slider/my-slider', {
         )
       });
 
-      return (
-      <div>
-        {slides}
-      </div>
-    );
-    },
+        return (
+        <div>
+          {slides}
+        </div>
+      );
+      },
 } );
