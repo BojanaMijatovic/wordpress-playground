@@ -1,0 +1,60 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-slider-my-slider {
+  width: 90%;
+  margin: 0 auto; }
+
+.slider-front {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  @media screen and (min-width: 768px) {
+    .slider-front {
+      -ms-flex-direction: row;
+          flex-direction: row; } }
+  .slider-front__wrapper {
+    position: relative;
+    padding-bottom: 40.25%;
+    height: 0;
+    width: 50%; }
+  .slider-front__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  .slider-front__text {
+    width: 50%;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      .slider-front__text {
+        margin-top: 30px; } }
+    .slider-front__text--title {
+      font-size: 20px;
+      color: #2b2b2b; }
+      @media screen and (min-width: 768px) {
+        .slider-front__text--title {
+          text-align: left;
+          font-size: 28px; } }
+    .slider-front__text--content {
+      font-size: 16px;
+      color: #939191; }
+      @media screen and (min-width: 768px) {
+        .slider-front__text--content {
+          text-align: left;
+          font-size: 18px; } }

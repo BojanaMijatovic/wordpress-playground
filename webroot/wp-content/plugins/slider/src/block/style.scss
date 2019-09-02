@@ -1,0 +1,56 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+$small: 768px;
+
+
+.wp-block-slider-my-slider {
+  width: 90%;
+  margin: 0 auto;
+}
+.slider-front {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media screen and (min-width: $small) {
+    flex-direction: row;
+  }
+  &__wrapper {
+    position: relative;
+    padding-bottom: 40.25%;
+    height: 0;
+    width: 50%;
+  }
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__text {
+    width: 50%;
+    text-align: center;
+    @media screen and (min-width: $small) {
+      margin-top: 30px;
+    }
+    &--title {
+      font-size: 20px;
+      color: #2b2b2b;
+      @media screen and (min-width: $small) {
+        text-align: left;
+        font-size: 28px;
+      }
+    }
+    &--content {
+      font-size: 16px;
+      color: #939191;
+      @media screen and (min-width: $small) {
+        text-align: left;
+        font-size: 18px;
+      }
+    }
+  }
+}
