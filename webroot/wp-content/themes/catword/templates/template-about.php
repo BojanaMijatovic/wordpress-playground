@@ -7,7 +7,7 @@
     <div class="about__left">
         <?php
 
-            $image = get_field('image_2');
+            $image = get_field('image_2', 1321);
 
             if( !empty($image) ): ?>
 
@@ -15,7 +15,7 @@
 
         <?php endif; ?>
       </div>
-    <?php $about = get_field('text_2');?>
+    <?php $about = get_field('text_2', 1321);?>
     <div class="about__right">
       <h2 class="about__title"> <?php echo $about['title'];?> </h2>
       <h3 class="about__subtitle"> <?php echo $about['subtitle'];?> </h3>

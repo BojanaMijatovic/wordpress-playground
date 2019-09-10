@@ -3,14 +3,14 @@
   get_header();
   ?>
 
-  <?php if ( have_rows('stats') ): ?>
+  <?php if ( have_rows('stats', 1314) ): ?>
       <section class="stats">
         <div class="stats__container">
           <div class="stats__field">
-            <?php while ( have_rows('stats')) : the_row();
+            <?php while ( have_rows('stats', 1314)) : the_row();
 
-              $icon = get_sub_field('stats_image');
-              $statsText = get_sub_field('stats_text');
+              $icon = get_sub_field('stats_image', 1314);
+              $statsText = get_sub_field('stats_text', 1314);
               ?>
 
             <div class="stats__content">

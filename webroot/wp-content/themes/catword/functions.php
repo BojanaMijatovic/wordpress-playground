@@ -1,9 +1,9 @@
 <?php
-function flexsliderCSS () {
-  wp_register_style( 'flexslidercss', get_stylesheet_directory_uri() . '/flexslider.css', array(), false, 'all' );
-    wp_enqueue_style('flexslidercss');
-}
-add_action('wp_enqueue_scripts', 'flexsliderCSS');
+  // function flexsliderCSS () {
+  //   wp_register_style( 'flexslidercss', get_stylesheet_directory_uri() . '/flexslider.css', array(), false, 'all' );
+  //     wp_enqueue_style('flexslidercss');
+  // }
+  // add_action('wp_enqueue_scripts', 'flexsliderCSS');
 
 
 function load_styles()
@@ -20,28 +20,31 @@ function load_styles()
 add_action('wp_enqueue_scripts', 'load_styles');
 
 
-function flexsliderJS () {
-  wp_register_script( 'flexslider-script',  get_stylesheet_directory_uri() . '/src/js/jquery.flexslider.js',  array(), 1, 1 );
-  wp_enqueue_script('flexslider-script');
-}
-add_action('wp_enqueue_script', 'flexsliderJS');
 
-function include_jquery()
-{
+// function include_jquery()
+// {
+//
+//     wp_deregister_script('jquery');
+//     wp_enqueue_script('jquery', get_template_directory_uri() . '/src/js/jquery.min.js', array(), null, true);
+//
+//
+// }
+// add_action('wp_enqueue_scripts','include_jquery');
 
-    wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', get_template_directory_uri() . '/src/js/jquery.min.js', array(), null, true);
 
+// function flexsliderJS () {
+//   wp_register_script( 'flexslider-script',  get_stylesheet_directory_uri() . '/src/js/jquery.flexslider.js',  array(), 1, 1 );
+//   wp_enqueue_script('flexslider-script');
+// }
+// add_action('wp_enqueue_script', 'flexsliderJS');
 
-}
-add_action('wp_enqueue_scripts','include_jquery');
 
 
 function loadjs()
 {
 
 
-    wp_register_script('mainjs', get_template_directory_uri() . '/js/all.js', '', 1, true);
+    wp_register_script('mainjs', get_template_directory_uri() . '/js/all.js', array('jquery'), null, true);
     wp_enqueue_script('mainjs');
 
 

@@ -3,12 +3,13 @@
   get_header();
   ?>
 
-  <?php $number = get_field('phone_number');?>
-  <?php $email = get_field('email');?>
-  <?php $address = get_field('address');?>
+  <?php $title = get_field('contact_title', 1325); ?>
+  <?php $number = get_field('phone_number', 1325);?>
+  <?php $email = get_field('email', 1325);?>
+  <?php $address = get_field('address', 1325);?>
   <section class="contact" id="contact">
     <div class="contact__container">
-      <h2 class="contact__title">Zainteresovani ste za saradnju</h2>
+      <h2 class="contact__title"><?php echo $title; ?></h2>
       <ul class="unstyle-list contact__list">
         <li class="contact__list--item">
           <p class="contact__list--number"><?php echo $number['number_one'];?> <br>

@@ -3,20 +3,19 @@
   get_header();
   ?>
 
-
-  <?php $services = get_field('languages');?>
+  <?php $services = get_field('languages', 1300);?>
   <h2><?php echo $services['title'];?></h2>
 
   <article class="services__language">
     <h3> <?php echo $services['subtitle'];?> </h3>
     <p> <?php echo $services['description'];?></p>
-    <?php if( have_rows('image_small') ): ?>
+    <?php if( have_rows('image_small', 1300) ): ?>
     <div class="services__icons">
-      <?php while( have_rows('image_small')): the_row();
+      <?php while( have_rows('image_small', 1300)): the_row();
 
 
-          $circle = get_sub_field('image_circle');
-          $language = get_sub_field('language');
+          $circle = get_sub_field('image_circle', 1300);
+          $language = get_sub_field('language', 1300);
       ?>
       <div class="services__icon">
         <div class="services__icon--img">

@@ -10,6 +10,7 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 90%;
+  padding: 10px 0;
   &__image {
     position: relative;
     padding-bottom: 50.25%;
@@ -23,6 +24,7 @@
     }
   }
   &__text {
+    position: relative;
     padding: 10px;
     width: 50%;
     text-align: left;
@@ -34,6 +36,26 @@
     font-size: 18px;
     color: #939191;
   }
+ }
+ &__remove {
+   display: block;
+   position: absolute;
+   top: -15px;
+   right: -60px;
+   padding: 15px;
+   margin: 0;
+ }
+ &__line {
+   position: relative;
+   display: block;
+   width: 20px;
+   height: 4px;
+   background-color: #3b3b3b;
+   transform: rotate(45deg);
+   &--x {
+     top: -4px;
+     transform: rotate(-45deg);
+   }
  }
 }
 

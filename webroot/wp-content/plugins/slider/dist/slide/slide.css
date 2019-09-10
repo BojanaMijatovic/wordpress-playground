@@ -1,3 +1,6 @@
+* ====================================================================================================================
+ * FONT-FACE
+ * ====================================================================================================================*/
 @font-face {
   font-family: 'flexslider-icon';
   src: url('fonts/flexslider-icon.eot');
@@ -26,16 +29,13 @@
 /* ====================================================================================================================
  * BASE STYLES
  * ====================================================================================================================*/
-.flexslider {
-  margin: 0;
-  padding: 0;
-}
+
 .flexslider .slides > li {
   display: none;
   -webkit-backface-visibility: hidden;
 }
 .flexslider .slides img {
-  width: 95%;
+  width: 100%;
   display: block;
 }
 .flexslider .slides:after {
@@ -114,7 +114,7 @@ html[xmlns] .flexslider .slides {
   overflow: hidden;
   opacity: 0;
   cursor: pointer;
-  border: solid rgba(214, 214, 214, 0.8);
+  border: solid rgb(85, 85, 125);;
   border-width: 0 2px 2px 0;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
   -webkit-transition: all 0.3s ease-in-out;
@@ -134,14 +134,14 @@ html[xmlns] .flexslider .slides {
 }
 .flexslider:hover .flex-direction-nav .flex-prev {
   opacity: 0.7;
-  left: -50px;
+  left: -30px;
 }
 .flexslider:hover .flex-direction-nav .flex-prev:hover {
   opacity: 1;
 }
 .flexslider:hover .flex-direction-nav .flex-next {
   opacity: 0.7;
-  right: -50px;
+  right: -30px;
 }
 .flexslider:hover .flex-direction-nav .flex-next:hover {
   opacity: 1;
@@ -180,7 +180,7 @@ html[xmlns] .flexslider .slides {
 .flex-control-nav {
   width: 100%;
   position: absolute;
-  bottom: -40px;
+  bottom: -10px;
   text-align: center;
 }
 .flex-control-nav li {
@@ -247,19 +247,3 @@ html[xmlns] .flexslider .slides {
 /* ====================================================================================================================
  * RESPONSIVE
  * ====================================================================================================================*/
-@media screen and (max-width: 768px) {
-  .flex-direction-nav .flex-prev {
-    opacity: 1;
-    left: 90px;
-    top: 105%;
-  }
-  .flex-direction-nav .flex-next {
-    opacity: 1;
-    right: 90px;
-    top: 105%;
-  }
-
-  .flex-control-nav {
-    visibility: hidden;
-  }
-}

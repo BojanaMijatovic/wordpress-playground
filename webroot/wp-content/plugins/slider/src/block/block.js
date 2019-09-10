@@ -11,7 +11,7 @@ import './style.scss';
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {FormFileUpload, Button} = wp.components;
+const { FormFileUpload, Button, Dashicon, Draggable } = wp.components;
 const {InspectorControls, RichText, MediaUpload, MediaUploadCheck, PlainText} = wp.editor;
 registerBlockType('slider/my-slider', {
   title: __('Slider'),
@@ -96,10 +96,23 @@ registerBlockType('slider/my-slider', {
       setAttributes({test: !attributes.test}) // Fix
     };
 
-    const slideTpl = (slide, attributes, i) => {
+    const removeSlide = (i) => {
+      let slides = attributes.slides;
+      slides.splice(i, 1);
+      setAttributes({slides: slides});
+      setAttributes({test: !attributes.test}) // Fix
+    };
+
+
+
+
+
+
+
+    let slideTpl = (slide, attributes, i, ) => {
 
       return (
-        <div className={'slider'}>
+        <div className={'slider'} id="slide" >
           <div className={'slider__image'}>
             <MediaUploadCheck>
               <MediaUpload
@@ -124,7 +137,15 @@ registerBlockType('slider/my-slider', {
               placeholder="Enter Your Content"
               onChange={(content) => setDescription(content, attributes, i)}
             />
-          </div>
+              <Button
+                className={'slider__remove'}
+                onClick={() => removeSlide(i)}
+                >
+                  <span className={'slider__line'}></span>
+                  <span className={'slider__line slider__line--x'}></span>
+              </Button>
+            </div>
+
         </div>
       )
     };
@@ -160,8 +181,11 @@ registerBlockType('slider/my-slider', {
     });
 
     return (
-      <div>
-        {slides}
+
+        <div>
+        <div id="sortable-slide">
+            {slides}
+        </div>
         <Button
           className="add__more"
           onClick={() => addMoreSlides(undefined, attributes, attributes.slides.length + 1)}>
@@ -175,9 +199,24 @@ registerBlockType('slider/my-slider', {
 
     let slides = [];
 
+    let active = false;
+
     attributes.slides.forEach((slide, i) => {
+
+      if(slide.img === undefined) {
+        return null;
+      };
+
+
+      let slideClass = 'slider-front';
+      if(!active) {
+        slideClass += ' active';
+        active = true;
+      }
       slides.push(
-        <div className={'slider-front'}>
+        <li className={'slider-front'}
+            id={"front-slider"}
+            >
           <div className={'slider-front__wrapper'}>
             <img src={slide.img !== undefined ? slide.img.url : null} className={'slider-front__img'}/>
           </div>
@@ -193,13 +232,16 @@ registerBlockType('slider/my-slider', {
               value={slide.description}
             />
           </div>
-        </div>
+        </li>
       )
     });
 
     return (
-      <div>
-        {slides}
+      <div className={'flexslider'}>
+        <ul className={'front slides'}
+        id={'front'}>
+          {slides}
+        </ul>
       </div>
     );
   },

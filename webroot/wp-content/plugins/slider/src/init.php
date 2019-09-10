@@ -27,6 +27,18 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
+
+ //FRONT CSS AND JS
+ function load_slide() {
+ 		wp_enqueue_style('slideCSS', plugins_url( '/dist/slide/slide.css', dirname( __FILE__ ) ), array());
+		wp_enqueue_script('slideJQ', plugins_url( '/dist/slide/jquery.flexslider.js', dirname( __FILE__ ) ), array('jquery'), null, true);
+ 		wp_enqueue_script('slideJS', plugins_url( '/dist/slide/slides.js', dirname( __FILE__ ) ), array('jquery'), null, true);
+
+ }
+ add_action('init', 'load_slide');
+
+
+
 function slider_cgb_block_assets() { // phpcs:ignore
 	// Register block styles for both frontend + backend.
 	wp_register_style(
@@ -82,9 +94,14 @@ function slider_cgb_block_assets() { // phpcs:ignore
 			'editor_script' => 'slider-cgb-block-js',
 			// Enqueue blocks.editor.build.css in the editor only.
 			'editor_style'  => 'slider-cgb-block-editor-css',
+
+			'editor_script' => 'slider-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'slider-cgb-block-editor-css',
 		)
 	);
 }
+
 
 // Hook: Block assets.
 add_action( 'init', 'slider_cgb_block_assets' );

@@ -8,7 +8,7 @@
       <div class="verbal__image">
         <?php
 
-            $image = get_field('image');
+            $image = get_field('image', 1305);
 
             if( !empty($image) ): ?>
 
@@ -16,7 +16,7 @@
 
         <?php endif; ?>
       </div>
-      <?php $text = get_field('text');?>
+      <?php $text = get_field('text', 1305);?>
       <div class="verbal__text">
         <h3 class="verbal__text--title"> <?php echo $text['title'];?> </h3>
         <p class="verbal__text--subtitle"> <?php echo $text['subtitle'];?> </p>

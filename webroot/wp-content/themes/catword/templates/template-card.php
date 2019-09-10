@@ -5,14 +5,14 @@
 
    <article class="list-of-services container">
      <h3>Prevodilačke usluge</h3>
- <?php if( have_rows('service_card') ): ?>
+ <?php if( have_rows('service_card', 1308) ): ?>
  <div class="service">
 
- <?php while( have_rows('service_card')): the_row();
+ <?php while( have_rows('service_card', 1308)): the_row();
 
-     $card = get_sub_field('card_image');
-     $title = get_sub_field('card_title');
-     $description = get_sub_field('card_content');
+     $card = get_sub_field('card_image', 1308);
+     $title = get_sub_field('card_title', 1308);
+     $description = get_sub_field('card_content', 1308);
  ?>
 
  <div class="service__card">
